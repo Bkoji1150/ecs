@@ -54,6 +54,7 @@ No requirements.
 | [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
 | [aws_vpc.test-vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
 | [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.ecs_task_execution_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_route53_zone.mydomain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 | [template_file.testapp](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
@@ -69,7 +70,6 @@ No requirements.
 | <a name="input_container_name"></a> [container\_name](#input\_container\_name) | n/a | `string` | `"flask"` | no |
 | <a name="input_container_source"></a> [container\_source](#input\_container\_source) | n/a | `string` | `"ecr"` | no |
 | <a name="input_container_version"></a> [container\_version](#input\_container\_version) | Please Provide the latest version of the app | `string` | n/a | yes |
-| <a name="input_ecr_account_id"></a> [ecr\_account\_id](#input\_ecr\_account\_id) | The ID of the account to which the ECR repository belongs. | `string` | `"735972722491"` | no |
 | <a name="input_ecs_task_execution_role"></a> [ecs\_task\_execution\_role](#input\_ecs\_task\_execution\_role) | ECS task execution role name | `string` | `"myECcsTaskExecutionRole"` | no |
 | <a name="input_fargate_cpu"></a> [fargate\_cpu](#input\_fargate\_cpu) | fargate instacne CPU units to provision,my requirent 1 vcpu so gave 1024 | `string` | `"1024"` | no |
 | <a name="input_fargate_memory"></a> [fargate\_memory](#input\_fargate\_memory) | Fargate instance memory to provision (in MiB) not MB | `string` | `"2048"` | no |
@@ -86,4 +86,4 @@ No requirements.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Authors
 
-Module is maintained by [kOJI BELLO](https://github.com/antonbabenko) with help from [these awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-autoscaling/graphs/contributors)Send me an email for any furher questions[kojibello058@gmail.com](kojibello058@gmail.com).
+Module is maintained by [kOJI BELLO](https://github.com/antonbabenko) with help from [these awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-autoscaling/graphs/contributors)Send me an email for any furher questions [kojibello058@gmail.com](kojibello058@gmail.com)

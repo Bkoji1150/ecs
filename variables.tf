@@ -25,15 +25,6 @@ variable "container_name" {
   type        = string
   default     = "flask"
 }
-# variable "app_image" {
-#   default     = "735972722491.dkr.ecr.us-east-1.amazonaws.com/flask:1.0.0"
-#   description = "docker image to run in this ECS cluster"
-# }
-variable "ecr_account_id" {
-  type        = string
-  description = "The ID of the account to which the ECR repository belongs."
-  default     = "735972722491"
-}
 
 variable "min_capacity" {
   description = "The Minimum capacity of instance to run"
