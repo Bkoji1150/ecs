@@ -6,7 +6,12 @@ data "template_file" "testapp" {
   template = file("./templates/image/image.json")
 
   vars = {
-    app_image      = var.app_image
+    app_image = lower(var.container_source) == "ecr" ? format(
+    "%s.dkr.ecr.us-east-1.amazonaws.com/%s:%s",
+    var.ecr_account_id,
+    var.container_name,
+    var.container_version
+  ) : ""
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
@@ -34,7 +39,7 @@ resource "aws_ecs_service" "test-service" {
   network_configuration {
     security_groups  = [aws_security_group.ecs_sg.id]
     subnets          = aws_subnet.private.*.id
-    assign_public_ip = true
+    assign_public_ip = false
   }
 
   load_balancer {
