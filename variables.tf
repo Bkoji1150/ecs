@@ -7,6 +7,30 @@ variable "aws_region" {
 variable "myip" {
   default = "0.0.0.0/0"
 }
+
+variable "tier" {
+  description = "Canonical name of the application tier"
+  type        = string
+  default     = "WEB"
+}
+
+variable "component_name" {
+  description = "Name of the component."
+  type        = string
+  default     = "flask"
+}
+
+variable "cell_name" {
+  description = "Name of the cell."
+  type        = string
+  default     = "reporting-frontend"
+}
+variable "cluster_name" {
+  description = "Name of the ECS cluster to deploy the service into."
+  type        = string
+  default     = null
+}
+
 variable "az_count" {
   default     = "2"
   description = "number of availability zones in above region"

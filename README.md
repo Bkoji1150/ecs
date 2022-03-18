@@ -36,6 +36,10 @@ No requirements.
 | [aws_appautoscaling_target.ecs_target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/appautoscaling_target) | resource |
 | [aws_cloudwatch_log_group.testapp_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
 | [aws_cloudwatch_log_stream.myapp_log_stream](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_stream) | resource |
+| [aws_cloudwatch_metric_alarm.container_cpu](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.container_cpu_reservation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.container_memory_reservation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.container_memory_utilization](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_ecs_cluster.test-cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_cluster) | resource |
 | [aws_ecs_service.test-service](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service) | resource |
 | [aws_ecs_task_definition.test-def](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_task_definition) | resource |
@@ -67,6 +71,9 @@ No requirements.
 | <a name="input_app_port"></a> [app\_port](#input\_app\_port) | portexposed on the docker image | `string` | `"8080"` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | aws region where our resources going to create choose | `string` | `"us-east-2"` | no |
 | <a name="input_az_count"></a> [az\_count](#input\_az\_count) | number of availability zones in above region | `string` | `"2"` | no |
+| <a name="input_cell_name"></a> [cell\_name](#input\_cell\_name) | Name of the cell. | `string` | `"reporting-frontend"` | no |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the ECS cluster to deploy the service into. | `string` | `null` | no |
+| <a name="input_component_name"></a> [component\_name](#input\_component\_name) | Name of the component. | `string` | `"flask"` | no |
 | <a name="input_container_name"></a> [container\_name](#input\_container\_name) | n/a | `string` | `"flask"` | no |
 | <a name="input_container_source"></a> [container\_source](#input\_container\_source) | n/a | `string` | `"ecr"` | no |
 | <a name="input_container_version"></a> [container\_version](#input\_container\_version) | Please Provide the latest version of the app | `string` | n/a | yes |
@@ -77,6 +84,7 @@ No requirements.
 | <a name="input_listener_port"></a> [listener\_port](#input\_listener\_port) | n/a | `string` | `"80"` | no |
 | <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | The Minimum capacity of instance to run | `number` | `2` | no |
 | <a name="input_myip"></a> [myip](#input\_myip) | n/a | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_tier"></a> [tier](#input\_tier) | Canonical name of the application tier | `string` | `"WEB"` | no |
 
 ## Outputs
 

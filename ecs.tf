@@ -1,6 +1,6 @@
 
 resource "aws_ecs_cluster" "test-cluster" {
-  name = "myapp-cluster"
+  name = local.cluster_name
 }
 
 data "template_file" "testapp" {
