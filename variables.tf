@@ -23,7 +23,7 @@ variable "ecs_task_execution_role" {
 variable "container_name" {
   description = ""
   type        = string
-  default = "flask"
+  default     = "flask"
 }
 # variable "app_image" {
 #   default     = "735972722491.dkr.ecr.us-east-1.amazonaws.com/flask:1.0.0"
@@ -37,7 +37,7 @@ variable "ecr_account_id" {
 
 variable "min_capacity" {
   description = "The Minimum capacity of instance to run"
-  type = number
+  type        = number
   default     = 2
 }
 variable "app_port" {
@@ -47,8 +47,8 @@ variable "app_port" {
 
 variable "app_count" {
   description = "numer of docker containers to run"
-  default     = "1" 
-  
+  default     = "1"
+
 }
 
 variable "health_check_path" {
@@ -69,6 +69,6 @@ variable "fargate_memory" {
 }
 
 variable "container_version" {
-description = "Please Provide the latest version of the app"
-type = string
+  description = "Please Provide the latest version of the app"
+  type        = string
 }

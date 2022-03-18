@@ -7,11 +7,11 @@ data "template_file" "testapp" {
 
   vars = {
     app_image = lower(var.container_source) == "ecr" ? format(
-    "%s.dkr.ecr.us-east-1.amazonaws.com/%s:%s",
-    var.ecr_account_id,
-    var.container_name,
-    var.container_version
-  ) : ""
+      "%s.dkr.ecr.us-east-1.amazonaws.com/%s:%s",
+      var.ecr_account_id,
+      var.container_name,
+      var.container_version
+    ) : ""
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
