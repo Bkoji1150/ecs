@@ -1,6 +1,6 @@
 # ECS 
 # This Module is used to build an ecs cluster with Terraform
-Using terraform to create and manage terraform
+Using terraform to create and manage AWS ECS CLUSTER WITH ALL IT'S COMPONENTS 
 
 This module builds the infrastructure for **hqr-operational-enviroment** agen in the **REPORTING-BACKEND** cell.
 
@@ -86,4 +86,4 @@ No requirements.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Authors
 
-Module is maintained by [kOJI BELLO](https://github.com/antonbabenko) with help from [these awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-autoscaling/graphs/contributors).
+Module is maintained by [kOJI BELLO](https://github.com/antonbabenko) with help from [these awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-autoscaling/graphs/contributors)Send me an email for any furher questions[kojibello058@gmail.com](kojibello058@gmail.com).
