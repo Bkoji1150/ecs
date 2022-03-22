@@ -1,11 +1,11 @@
 
 
-module required_tags {
-  source = "git::git@github.com:Bkoji1150/kojitechs-tf-aws-required-tags.git" 
+module "required_tags" {
+  source = "git::git@github.com:Bkoji1150/kojitechs-tf-aws-required-tags.git"
 
-  line_of_business        = var.line_of_business 
+  line_of_business        = var.line_of_business
   ado                     = "Kojitechs"
-  tier                    = var.tier 
+  tier                    = var.tier
   operational_environment = terraform.workspace
   tech_poc_primary        = "Analytics@Kojitechs.io"
   tech_poc_secondary      = "Analytics@Kojitechs.io"
@@ -13,8 +13,8 @@ module required_tags {
   builder                 = "kojibello058@gmail.com"
   application_owner       = "Analytics@Kojitechs.io"
   vpc                     = "APP"
-  cell_name               = var.cell_name 
-  component_name          = var.component_name 
+  cell_name               = var.cell_name
+  component_name          = var.component_name
 }
 
 resource "aws_ecs_cluster" "test-cluster" {

@@ -29,7 +29,7 @@ variable "component_name" {
 }
 
 variable "line_of_business" {
-   default     = "HQR"
+  default = "HQR"
 }
 variable "cell_name" {
   description = "Name of the cell."
