@@ -8,6 +8,14 @@ variable "myip" {
   default = "0.0.0.0/0"
 }
 
+
+
+variable "ecr_account_id" {
+  type        = string
+  description = "The ID of the account to which the ECR repository belongs."
+  default     = "735972722491"
+}
+
 variable "tier" {
   description = "Canonical name of the application tier"
   type        = string
@@ -44,6 +52,30 @@ variable "ecs_task_execution_role" {
   description = "ECS task execution role name"
 }
 
+variable "dns_name" {
+  type    = map(string)
+  default = {
+    prod = "kojitechs.com"
+    sbx  = "kelderanyi.com"
+  }
+}
+
+variable "env" {
+  type = map(string)
+  default = {
+    prod = "735972722491"
+    sbx  = "674293488770"
+  }
+}
+
+variable "subject_alternative_names" {
+  type = map(string)
+  default = {
+    prod = "*.kojitechs.com"
+    sbx  = "*.kelderanyi.com"
+  }
+}
+
 variable "container_name" {
   description = ""
   type        = string
@@ -53,7 +85,7 @@ variable "container_name" {
 variable "min_capacity" {
   description = "The Minimum capacity of instance to run"
   type        = number
-  default     = 2
+  default     = 1
 }
 variable "app_port" {
   default     = "8080"
@@ -78,6 +110,7 @@ variable "container_source" {
   default = "ecr"
 }
 
+
 variable "fargate_memory" {
   default     = "2048"
   description = "Fargate instance memory to provision (in MiB) not MB"
@@ -87,3 +120,4 @@ variable "container_version" {
   description = "Please Provide the latest version of the app"
   type        = string
 }
+

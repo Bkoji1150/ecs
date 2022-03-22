@@ -9,7 +9,7 @@ data "template_file" "testapp" {
   vars = {
     app_image = lower(var.container_source) == "ecr" ? format(
       "%s.dkr.ecr.us-east-1.amazonaws.com/%s:%s",
-      data.aws_caller_identity.current.account_id,
+      var.ecr_account_id,
       var.container_name,
       var.container_version
     ) : ""
