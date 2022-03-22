@@ -10,7 +10,9 @@ This module was built using [ecs](https://github.com/Bkoji1150/ecs.git).
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.1.5 |
 
 ## Providers
 
@@ -77,13 +79,17 @@ No requirements.
 | <a name="input_container_name"></a> [container\_name](#input\_container\_name) | n/a | `string` | `"flask"` | no |
 | <a name="input_container_source"></a> [container\_source](#input\_container\_source) | n/a | `string` | `"ecr"` | no |
 | <a name="input_container_version"></a> [container\_version](#input\_container\_version) | Please Provide the latest version of the app | `string` | n/a | yes |
+| <a name="input_dns_name"></a> [dns\_name](#input\_dns\_name) | n/a | `map(string)` | <pre>{<br>  "prod": "kojitechs.com",<br>  "sbx": "kelderanyi.com"<br>}</pre> | no |
+| <a name="input_ecr_account_id"></a> [ecr\_account\_id](#input\_ecr\_account\_id) | The ID of the account to which the ECR repository belongs. | `string` | `"735972722491"` | no |
 | <a name="input_ecs_task_execution_role"></a> [ecs\_task\_execution\_role](#input\_ecs\_task\_execution\_role) | ECS task execution role name | `string` | `"myECcsTaskExecutionRole"` | no |
+| <a name="input_env"></a> [env](#input\_env) | n/a | `map(string)` | <pre>{<br>  "prod": "735972722491",<br>  "sbx": "674293488770"<br>}</pre> | no |
 | <a name="input_fargate_cpu"></a> [fargate\_cpu](#input\_fargate\_cpu) | fargate instacne CPU units to provision,my requirent 1 vcpu so gave 1024 | `string` | `"1024"` | no |
 | <a name="input_fargate_memory"></a> [fargate\_memory](#input\_fargate\_memory) | Fargate instance memory to provision (in MiB) not MB | `string` | `"2048"` | no |
 | <a name="input_health_check_path"></a> [health\_check\_path](#input\_health\_check\_path) | n/a | `string` | `"/"` | no |
 | <a name="input_listener_port"></a> [listener\_port](#input\_listener\_port) | n/a | `string` | `"80"` | no |
-| <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | The Minimum capacity of instance to run | `number` | `2` | no |
+| <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | The Minimum capacity of instance to run | `number` | `1` | no |
 | <a name="input_myip"></a> [myip](#input\_myip) | n/a | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_subject_alternative_names"></a> [subject\_alternative\_names](#input\_subject\_alternative\_names) | n/a | `map(string)` | <pre>{<br>  "prod": "*.kojitechs.com",<br>  "sbx": "*.kelderanyi.com"<br>}</pre> | no |
 | <a name="input_tier"></a> [tier](#input\_tier) | Canonical name of the application tier | `string` | `"WEB"` | no |
 
 ## Outputs

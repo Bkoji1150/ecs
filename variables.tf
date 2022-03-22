@@ -28,6 +28,9 @@ variable "component_name" {
   default     = "flask"
 }
 
+variable "line_of_business" {
+   default     = "HQR"
+}
 variable "cell_name" {
   description = "Name of the cell."
   type        = string
@@ -53,26 +56,26 @@ variable "ecs_task_execution_role" {
 }
 
 variable "dns_name" {
-  type    = map(string)
+  type = map(string)
   default = {
-    prod = "kojitechs.com"
-    sbx  = "kelderanyi.com"
+    PROD = "kojitechs.com"
+    SBX  = "kelderanyi.com"
   }
 }
 
 variable "env" {
   type = map(string)
   default = {
-    prod = "735972722491"
-    sbx  = "674293488770"
+    PROD = "735972722491"
+    SBX  = "674293488770"
   }
 }
 
 variable "subject_alternative_names" {
   type = map(string)
   default = {
-    prod = "*.kojitechs.com"
-    sbx  = "*.kelderanyi.com"
+    PROD = "*.kojitechs.com"
+    SBX  = "*.kelderanyi.com"
   }
 }
 
@@ -120,4 +123,3 @@ variable "container_version" {
   description = "Please Provide the latest version of the app"
   type        = string
 }
-

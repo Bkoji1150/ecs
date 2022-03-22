@@ -6,7 +6,7 @@ provider "aws" {
     role_arn = "arn:aws:iam::${lookup(var.env, terraform.workspace)}:role/Role_For-S3_Creation"
   }
   default_tags {
-    tags = local.default_tags
+    tags = module.required_tags.aws_default_tags
   }
 }
 
@@ -19,4 +19,3 @@ terraform {
     region = "us-east-1"
   }
 }
-
