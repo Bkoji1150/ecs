@@ -6,7 +6,7 @@ module "required_tags" {
   line_of_business        = var.line_of_business
   ado                     = "Kojitechs"
   tier                    = var.tier
-  operational_environment = terraform.workspace
+  operational_environment = upper(terraform.workspace)
   tech_poc_primary        = "Analytics@Kojitechs.io"
   tech_poc_secondary      = "Analytics@Kojitechs.io"
   application             = "HQR"
