@@ -1,6 +1,8 @@
 
-data "aws_route53_zone" "mydomain" {
-  name = "kojitechs.com"
-}
 
-data "aws_caller_identity" "current" {}
+data "aws_elb_service_account" "main" {}
+
+data "aws_secretsmanager_secret_version" "rds_secret_target" {
+  depends_on = [module.aurora]
+  secret_id  = module.aurora.secrets_version
+}
